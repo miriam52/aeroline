@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Vuelos disponibles</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 40px;
+            background: linear-gradient(135deg, #e0f7fa, #ffffff);
+            color: #333;
+        }
+        h1 {
+            color: #007acc;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+        }
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 16px;
+        }
+        thead th {
+            background-color: #007acc;
+            color: #fff;
+            padding: 15px 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid #005f99;
+        }
+        tbody td {
+            padding: 14px 12px;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.25s ease;
+        }
+        tbody tr:hover td {
+            background-color: #e6f2ff;
+        }
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        tbody td:nth-child(7) {
+            color: #007acc;
+            font-weight: 700;
+        }
+        tbody td:nth-child(8) {
+            font-style: italic;
+            color: #555;
+        }
+        /* Responsive: reduce font on smaller screens */
+        @media (max-width: 600px) {
+            table {
+                font-size: 14px;
+            }
+            thead th, tbody td {
+                padding: 10px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Vuelos Disponibles</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID Vuelo</th>
+                <th>Origen</th>
+                <th>Destino</th>
+                <th>Fecha</th>
+                <th>Hora Salida</th>
+                <th>Hora Llegada</th>
+                <th>Precio (MXN)</th>
+                <th>Avión</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>101</td>
+                <td>Ciudad de México</td>
+                <td>Monterrey</td>
+                <td>2025-06-15</td>
+                <td>08:00</td>
+                <td>10:00</td>
+                <td>$2,500.00</td>
+                <td>Airbus A320</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Guadalajara</td>
+                <td>Tijuana</td>
+                <td>2025-06-16</td>
+                <td>09:30</td>
+                <td>12:45</td>
+                <td>$3,200.00</td>
+                <td>Boeing 737</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>Cancún</td>
+                <td>Mérida</td>
+                <td>2025-06-17</td>
+                <td>14:00</td>
+                <td>15:30</td>
+                <td>$1,200.00</td>
+                <td>Embraer 190</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

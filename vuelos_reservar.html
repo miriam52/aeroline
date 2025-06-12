@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MEX Aerolínea - Compra tu vuelo</title>
+  <style>
+    /* Reset y base */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f5f9ff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: 2rem;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #cce0ff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    /* Intro Section */
+    .intro {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .intro h2 {
+      font-size: 2rem;
+      color: #004080;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    /* Banners */
+    .banners {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+
+    .banner {
+      background: #007acc;
+      color: white;
+      padding: 25px 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 122, 204, 0.3);
+      flex: 1 1 300px;
+      min-width: 280px;
+      transition: background-color 0.3s ease;
+    }
+
+    .banner:hover {
+      background: #005f99;
+    }
+
+    .banner h3 {
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+
+    .banner p {
+      font-size: 1rem;
+      margin-top: 8px;
+      font-weight: 500;
+    }
+
+    /* Table Styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 50px;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    thead {
+      background-color: #004080;
+      color: white;
+    }
+
+    thead th {
+      padding: 15px;
+      font-weight: 600;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+    }
+
+    tbody tr {
+      transition: background-color 0.3s ease;
+      cursor: default;
+    }
+
+    tbody tr:hover {
+      background-color: #e6f2ff;
+    }
+
+    tbody td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+      font-size: 0.95rem;
+    }
+
+    /* Form Section */
+    #reserva {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 0 auto 60px;
+    }
+
+    #reserva h2 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 20px;
+    }
+
+    form h3, form h4 {
+      color: #004080;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    form select,
+    form input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 20px;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    form select:focus,
+    form input[type="text"]:focus {
+      border-color: #007acc;
+      outline: none;
+    }
+
+    form input[disabled] {
+      background-color: #eee;
+      color: #777;
+      cursor: not-allowed;
+    }
+
+    form p {
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: -15px;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    button[type="submit"] {
+      background-color: #007acc;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 12px 0;
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #005f99;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 20px 15px;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+    }
+
+    footer p {
+      margin: 6px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .banners {
+        flex-direction: column;
+      }
+      nav a {
+        display: inline-block;
+        margin: 8px 12px;
+      }
+      table, tbody td, thead th {
+        font-size: 0.85rem;
+      }
+      #reserva {
+        padding: 20px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>MEX Aerolínea</h1>
+  <nav>
+    <a href="#vuelos">Vuelos</a>
+    <a href="#reserva">Reservar</a>
+    <a href="#ofertas">Ofertas</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <section class="intro">
+    <h2>Tu próximo viaje empieza aquí</h2>
+    <p>Encuentra y reserva vuelos nacionales e internacionales con MEX Aerolínea. ¡Vuela seguro y cómodo!</p>
+  </section>
+
+  <section id="ofertas" class="banners">
+    <div class="banner">
+      <h3>¡Oferta Especial!</h3>
+      <p>Vuela a Cancún con un 30% de descuento en vuelos seleccionados. ¡No te lo pierdas!</p>
+    </div>
+    <div class="banner">
+      <h3>Nuevas Rutas</h3>
+      <p>Descubre nuestros nuevos destinos internacionales. ¡Explora el mundo con nosotros!</p>
+    </div>
+  </section>
+
+  <section id="vuelos">
+    <h2>Vuelos Disponibles</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Origen</th>
+          <th>Destino</th>
+          <th>Avión</th>
+          <th>Fecha</th>
+          <th>Salida</th>
+          <th>Llegada</th>
+          <th>Precio</th>
+          <th>Asientos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CDMX</td>
+          <td>Cancún</td>
+          <td>Airbus A320</td>
+          <td>2025-07-15</td>
+          <td>10:00</td>
+          <td>12:30</td>
+          <td>$2,300 MXN</td>
+          <td>12</td>
+        </tr>
+        <!-- Más filas estáticas aquí -->
+      </tbody>
+    </table>
+  </section>
+
+  <section id="reserva">
+    <h2>Reserva y Paga tu Vuelo</h2>
+
+    <form>
+      <h3>Detalles de la Reserva</h3>
+
+      <label for="pasajero">Pasajero:</label>
+      <select id="pasajero" name="pasajero" required>
+        <option>Juan Pérez</option>
+        <option>Laura Gómez</option>
+      </select>
+
+      <label for="vuelo">Vuelo:</label>
+      <select id="vuelo" name="vuelo" required>
+        <option>CDMX a Cancún - 15/07/2025</option>
+      </select>
+
+      <h4>Información de Pago (Simulada)</h4>
+      <input type="text" placeholder="Número de tarjeta" disabled>
+      <input type="text" placeholder="MM/AA" disabled>
+      <input type="text" placeholder="CVC" disabled>
+      <p>* Campos deshabilitados por ser solo una simulación.</p>
+
+      <button type="submit">Confirmar Reserva y Pagar</button>
+    </form>
+  </section>
+
+</div>
+
+<footer id="contacto">
+  <p>&copy; 2025 MEX Aerolínea. Todos los derechos reservados.</p>
+  <p>Contacto: info@mexaerolinea.com | Tel: +52 55 1234 5678</p>
+</footer>
+
+</body>
+</html>

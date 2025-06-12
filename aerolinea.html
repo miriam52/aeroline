@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Base de datos Aerolínea - Datos</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    background: #f9fafc;
+    color: #333;
+  }
+  h1 {
+    text-align: center;
+    color: #004080;
+    margin-bottom: 40px;
+    font-weight: 700;
+  }
+  h2 {
+    margin-top: 50px;
+    color: #0066cc;
+    border-bottom: 2px solid #0066cc;
+    padding-bottom: 8px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 0.95rem;
+  }
+  th {
+    background-color: #007acc;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #f2f7ff;
+  }
+  tbody tr:hover {
+    background-color: #d9eaff;
+  }
+  /* Responsive */
+  @media (max-width: 768px) {
+    body {
+      margin: 10px;
+    }
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+    thead tr {
+      display: none;
+    }
+    tbody tr {
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      background: #fff;
+      padding: 10px;
+    }
+    tbody td {
+      border: none;
+      position: relative;
+      padding-left: 50%;
+      text-align: right;
+    }
+    tbody td::before {
+      position: absolute;
+      top: 12px;
+      left: 15px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      font-weight: 600;
+      text-align: left;
+      color: #007acc;
+      content: attr(data-label);
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>Base de datos: aerolinea</h1>
+
+<h2>Tabla: aeropuertos</h2>
+<table>
+  <thead>
+    <tr>
+      <th>id_aeropuerto</th>
+      <th>ciudad</th>
+      <th>codigo_iata</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td data-label="id_aeropuerto">1</td><td data-label="ciudad">Ciudad de México</td><td data-label="codigo_iata">MEX</td></tr>
+    <tr><td data-label="id_aeropuerto">2</td><td data-label="ciudad">Guadalajara</td><td data-label="codigo_iata">GDL</td></tr>
+    <tr><td data-label="id_aeropuerto">3</td><td data-label="ciudad">Monterrey</td><td data-label="codigo_iata">MTY</td></tr>
+    <tr><td data-label="id_aeropuerto">4</td><td data-label="ciudad">Cancún</td><td data-label="codigo_iata">CUN</td></tr>
+    <tr><td data-label="id_aeropuerto">5</td><td data-label="ciudad">Tijuana</td><td data-label="codigo_iata">TIJ</td></tr>
+    <tr><td data-label="id_aeropuerto">6</td><td data-label="ciudad">Los Ángeles</td><td data-label="codigo_iata">LAX</td></tr>
+    <tr><td data-label="id_aeropuerto">7</td><td data-label="ciudad">Houston</td><td data-label="codigo_iata">IAH</td></tr>
+    <tr><td data-label="id_aeropuerto">8</td><td data-label="ciudad">Nueva York</td><td data-label="codigo_iata">JFK</td></tr>
+    <tr><td data-label="id_aeropuerto">9</td><td data-label="ciudad">Miami</td><td data-label="codigo_iata">MIA</td></tr>
+    <tr><td data-label="id_aeropuerto">10</td><td data-label="ciudad">Chicago</td><td data-label="codigo_iata">ORD</td></tr>
+    <tr><td data-label="id_aeropuerto">11</td><td data-label="ciudad">Dallas</td><td data-label="codigo_iata">DFW</td></tr>
+  </tbody>
+</table>
+
+<h2>Tabla: aviones</h2>
+<table>
+  <thead>
+    <tr>
+      <th>id_avion</th>
+      <th>modelo</th>
+      <th>capacidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td data-label="id_avion">1</td><td data-label="modelo">Boeing 737</td><td data-label="capacidad">160</td></tr>
+    <tr><td data-label="id_avion">2</td><td data-label="modelo">Airbus A320</td><td data-label="capacidad">150</td></tr>
+    <tr><td data-label="id_avion">3</td><td data-label="modelo">Boeing 787</td><td data-label="capacidad">242</td></tr>
+    <tr><td data-label="id_avion">4</td><td data-label="modelo">Embraer E190</td><td data-label="capacidad">100</td></tr>
+    <tr><td data-label="id_avion">5</td><td data-label="modelo">Airbus A380</td><td data-label="capacidad">525</td></tr>
+  </tbody>
+</table>
+
+<h2>Tabla: pasajeros</h2>
+<table>
+  <thead>
+    <tr>
+      <th>id_pasajero</th>
+      <th>nombre</th>
+      <th>apellido</th>
+      <th>sexo</th>
+      <th>telefono</th>
+      <th>direccion</th>
+      <th>correo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td data-label="id_pasajero">1</td><td data-label="nombre">Juan</td><td data-label="apellido">Pérez</td><td data-label="sexo">M</td><td data-label="telefono">5512345678</td><td data-label="direccion">Calle 1, Ciudad de México</td><td data-label="correo">juan.perez@example.com</td></tr>
+    <tr><td data-label="id_pasajero">2</td><td data-label="nombre">Ana</td><td data-label="apellido">García</td><td data-label="sexo">F</td><td data-label="telefono">5512345679</td><td data-label="direccion">Calle 2, Guadalajara</td><td data-label="correo">ana.garcia@example.com</td></tr>
+    <tr><td data-label="id_pasajero">3</td><td data-label="nombre">Luis</td><td data-label="apellido">Martínez</td><td data-label="sexo">M</td><td data-label="telefono">5512345680</td><td data-label="direccion">Calle 3, Monterrey</td><td data-label="correo">luis.martinez@example.com</td></tr>
+    <tr><td data-label="id_pasajero">4</td><td data-label="nombre">Sofía</td><td data-label="apellido">López</td><td data-label="sexo">F</td><td data-label="telefono">5512345681</td><td data-label="direccion">Calle 4, Cancún</td><td data-label="correo">sofia.lopez@example.com</td></tr>
+    <tr><td data-label="id_pasajero">5</td><td data-label="nombre">Carlos</td><td data-label="apellido">Hernández</td><td data-label="sexo">M</td><td data-label="telefono">5512345682</td><td data-label="direccion">Calle 5, Tijuana</td><td data-label="correo">carlos.hernandez@example.com</td></tr>
+    <tr><td data-label="id_pasajero">6</td><td data-label="nombre">María</td><td data-label="apellido">Ramírez</td><td data-label="sexo">F</td><td data-label="telefono">5512345683</td><td data-label="direccion">Calle 6, Los Ángeles</td><td data-label="correo">maria.ramirez@example.com</td></tr>
+    <tr><td data-label="id_pasajero">7</td><td data-label="nombre">José</td><td data-label="apellido">Gómez</td><td data-label="sexo">M</td><td data-label="telefono">5512345684</td><td data-label="direccion">Calle 7, Houston</td><td data-label="correo">jose.gomez@example.com</td></tr>
+    <tr><td data-label="id_pasajero">8</td><td data-label="nombre">Laura</td><td data-label="apellido">Fernández</td><td data-label="sexo">F</td><td data-label="telefono">5512345685</td><td data-label="direccion">Calle 8, Nueva York</td><td data-label="correo">laura.fernandez@example.com</td></tr>
+    <tr><td data-label="id_pasajero">9</td><td data-label="nombre">Miguel</td><td data-label="apellido">Sánchez</td><td data-label="sexo">M</td><td data-label="telefono">5512345686</td><td data-label="direccion">Calle 9, Miami</td><td data-label="correo">miguel.sanchez@example.com</td></tr>
+    <tr><td data-label="id_pasajero">10</td><td data-label="nombre">Elena</td><td data-label="apellido">Torres</td><td data-label="sexo">F</td><td data-label="telefono">5512345687</td><td data-label="direccion">Calle 10, Chicago</td><td data-label="correo">elena.torres@example.com</td></tr>
+  </tbody>
+</table>
+
+<h2>Tabla: vuelos</h2>
+<table>
+  <thead>
+    <tr>
+      <th>id_vuelo</th>
+      <th>id_aeropuerto_origen</th>
+      <th>id_aeropuerto_destino</th>
+      <th>id_avion</th>
+      <th>fecha_hora_salida</th>
+      <th>fecha_hora_llegada</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td data-label="id_vuelo">1</td><td data-label="id_aeropuerto_origen">1</td><td data-label="id_aeropuerto_destino">2</td><td data-label="id_avion">1</td><td data-label="fecha_hora_salida">2025-07-01 08:00</td><td data-label="fecha_hora_llegada">2025-07-01 09:30</td></tr>
+    <tr><td data-label="id_vuelo">2</td><td data-label="id_aeropuerto_origen">2</td><td data-label="id_aeropuerto_destino">3</td><td data-label="id_avion">2</td><td data-label="fecha_hora_salida">2025-07-02 10:00</td><td data-label="fecha_hora_llegada">2025-07-02 11:15</td></tr>
+    <tr><td data-label="id_vuelo">3</td><td data-label="id_aeropuerto_origen">3</td><td data-label="id_aeropuerto_destino">4</td><td data-label="id_avion">3</td><td data-label="fecha_hora_salida">2025-07-03 12:00</td><td data-label="fecha_hora_llegada">2025-07-03 14:00</td></tr>
+    <tr><td data-label="id_vuelo">4</td><td data-label="id_aeropuerto_origen">4</td><td data-label="id_aeropuerto_destino">5</td><td data-label="id_avion">4</td><td data-label="fecha_hora_salida">2025-07-04 15:00</td><td data-label="fecha_hora_llegada">2025-07-04 17:00</td></tr>
+    <tr><td data-label="id_vuelo">5</td><td data-label="id_aeropuerto_origen">5</td><td data-label="id_aeropuerto_destino">1</td><td data-label="id_avion">5</td><td data-label="fecha_hora_salida">2025-07-05 18:00</td><td data-label="fecha_hora_llegada">2025-07-05 21:00</td></tr>
+  </tbody>
+</table>
+
+<h2>Tabla: boletos</h2>
+<table>
+  <thead>
+    <tr>
+      <th>id_boleto</th>
+      <th>id_pasajero</th>
+      <th>id_vuelo</th>
+      <th>asiento</th>
+      <th>precio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td data-label="id_boleto">1</td><td data-label="id_pasajero">1</td><td data-label="id_vuelo">1</td><td data-label="asiento">12A</td><td data-label="precio">$250.00</td></tr>
+    <tr><td data-label="id_boleto">2</td><td data-label="id_pasajero">2</td><td data-label="id_vuelo">2</td><td data-label="asiento">8B</td><td data-label="precio">$300.00</td></tr>
+    <tr><td data-label="id_boleto">3</td><td data-label="id_pasajero">3</td><td data-label="id_vuelo">3</td><td data-label="asiento">14C</td><td data-label="precio">$400.00</td></tr>
+    <tr><td data-label="id_boleto">4</td><td data-label="id_pasajero">4</td><td data-label="id_vuelo">4</td><td data-label="asiento">20D</td><td data-label="precio">$350.00</td></tr>
+    <tr><td data-label="id_boleto">5</td><td data-label="id_pasajero">5</td><td data-label="id_vuelo">5</td><td data-label="asiento">5E</td><td data-label="precio">$450.00</td></tr>
+  </tbody>
+</table>
+
+</body>
+</html>
